@@ -169,10 +169,42 @@ if (selectedTheme) {
 }
 
 // Activate / deactivate the theme manually with the button
+// themeButton.addEventListener("click", () => {
+//   // Add or remove the dark / icon theme
+//   document.body.classList.toggle(darkTheme);
+//   themeButton.classList.toggle(iconTheme);
+//   // We save the theme and the current icon that the user chose
+//   localStorage.setItem("selected-theme", getCurrentTheme());
+//   localStorage.setItem("selected-icon", getCurrentIcon());
+// });
+
+// Function to update the image based on the current theme
+function updateThemeImages() {
+  const isDarkTheme = document.body.classList.contains(darkTheme);
+  const lightModeImg = document.getElementById("light-mode-img");
+  const darkModeImg = document.getElementById("dark-mode-img");
+
+  if (isDarkTheme) {
+    lightModeImg.style.display = "none"; // Hide light mode image
+    darkModeImg.style.display = "block"; // Show dark mode image
+  } else {
+    lightModeImg.style.display = "block"; // Show light mode image
+    darkModeImg.style.display = "none"; // Hide dark mode image
+  }
+}
+
+// Check the initial theme on page load
+updateThemeImages();
+
+// Activate / deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {
   // Add or remove the dark / icon theme
   document.body.classList.toggle(darkTheme);
   themeButton.classList.toggle(iconTheme);
+  
+  // Update the images based on the current theme
+  updateThemeImages();
+
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
