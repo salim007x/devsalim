@@ -221,10 +221,15 @@ document.getElementById('sendEmail').addEventListener('click', function(e) {
     return; // Exit if there are validation errors
   }
 
+  // USER CAN CHANGE THE EMAIL BELOW
+  const emailAddress = 'devsalimsulaiman@gmail.com';
+
   // Open default mail app with prefilled message
   const subject = `Message from ${name}`;
   const body = `Hello Salim,\n\n${message}\n\nBest regards,\n${name} (${email})`;
-  const mailtoLink = `mailto:devsalimsulaiman@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // const mailtoLink = `mailto:devsalimsulaiman@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const mailtoLink = `mailto:${encodeURIComponent(emailAddress)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
 
   window.location.href = mailtoLink;
 });
