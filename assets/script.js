@@ -180,25 +180,45 @@ themeButton.addEventListener("click", () => {
 
 
 // OPENING MAIL
-
 document.getElementById('sendEmail').addEventListener('click', function(e) {
   e.preventDefault();
+
+  // Clear previous error messages
+  document.getElementById('nameError').textContent = '';
+  document.getElementById('emailError').textContent = '';
+  document.getElementById('messageError').textContent = '';
 
   // Form validation
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
 
-  if (!name || !email || !message) {
-    alert('Please fill out all fields before sending.');
-    return;
+  let valid = true;
+
+  if (!name) {
+    document.getElementById('nameError').textContent = 'Please enter your name.';
+    valid = false;
   }
 
-  // Email format validation
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    alert('Please enter a valid email address.');
-    return;
+  if (!email) {
+    document.getElementById('emailError').textContent = 'Please enter your email.';
+    valid = false;
+  } else {
+    // Email format validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+      valid = false;
+    }
+  }
+
+  if (!message) {
+    document.getElementById('messageError').textContent = 'Please enter your message.';
+    valid = false;
+  }
+
+  if (!valid) {
+    return; // Exit if there are validation errors
   }
 
   // Open default mail app with prefilled message

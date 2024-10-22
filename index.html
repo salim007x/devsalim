@@ -595,6 +595,26 @@
               </div>
             </div>
 
+
+            <!-- ------------------------portfollio 5-------------------- -->
+            <div class="portfolio__content grid swiper-slide">
+              <img src="assets/img/portfolio-i18n.jpeg" class="portfolio__img" />
+
+              <div class="portfolio__data">
+                <h3 class="portfolio__title">Web App in different languages</h3>
+                <p class="portfolio__description">
+                  A clothing shop single page application (SPA) that is leveraging on Angular's i18n system to display web app's ability to come in multiple versions based on its users' locations and locales. This project supports Arabic, French, and English translations for users. Internalization and website / web apps translations come in handy when we our targetted audiences are from different lingual backgrounds.
+                </p>
+                <a
+                  href="https://github.com/devsalimsulaiman/i18n" target="_blank"
+                  class="button button--flex button--small portfolio__button"
+                >
+                  GitHub Repository
+                  <i class="uil uil-external-link-alt button__icon"></i>
+                </a>
+              </div>
+            </div>
+
             <!-- ------------------------portfollio 3-------------------- -->
             <div class="portfolio__content grid swiper-slide">
               <img src="assets/img/portfolio2.jpeg" class="portfolio__img" />
@@ -634,24 +654,6 @@
               </div>
             </div>
 
-            <!-- ------------------------portfollio 5-------------------- -->
-            <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio-i18n.jpeg" class="portfolio__img" />
-
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Web App in different languages</h3>
-                <p class="portfolio__description">
-                  A clothing shop single page application (SPA) that is leveraging on Angular's i18n system to display web app's ability to come in multiple versions based on its users' locations and locales. This project supports Arabic, French, and English translations for users. Internalization and website / web apps translations come in handy when we our targetted audiences are from different lingual backgrounds.
-                </p>
-                <a
-                  href="https://github.com/devsalimsulaiman/i18n" target="_blank"
-                  class="button button--flex button--small portfolio__button"
-                >
-                  GitHub Repository
-                  <i class="uil uil-external-link-alt button__icon"></i>
-                </a>
-              </div>
-            </div>
 
             <!-- ------------------------portfollio 6-------------------- -->
             <div class="portfolio__content grid swiper-slide">
@@ -689,75 +691,35 @@
       <section class="contact section" id="contact">
         <h2 class="section__title">Contact Me</h2>
         <span class="section__subtitle">Get in touch with Salim</span>
-
+      
         <div class="contact__container container grid">
           <div>
-            <div class="contact__information">
-              <i class="uil uil-calling contact__icon"></i>
-
-              <div>
-                <h3 class="contact__title">Phone</h3>
-                <span class="contact__subtitle"
-                  ><a href="tel:+2348164626581"></a>+2348164626581</span
-                >
-              </div>
-            </div>
-
-            <div class="contact__information">
-              <i class="uil uil-envelope-minus contact__icon"></i>
-
-              <div>
-                <h3 class="contact__title">Email</h3>
-                <span class="contact__subtitle"
-                  ></span
-                >
-                <p class="contact__subtitle"
-                  ><a href="mailto: devsalimsulaiman@gmail.com"></a>devsalimsulaiman@gmail.com</p
-                >
-              </div>
-            </div>
-
-            <div class="contact__information">
-              <i class="uil uil-map-marker contact__icon"></i>
-
-              <div>
-                <h3 class="contact__title">Location</h3>
-                <span class="contact__subtitle"
-                  >Abuja, Nigeria</span
-                >
-              </div>
-            </div>
+            <!-- Your existing contact information here -->
           </div>
-
+      
           <form id="contactForm" class="contact__form grid">
             <div class="contact__inputs grid">
               <div class="contact__content">
                 <label for="name" class="content__label">Your Name</label>
                 <input type="text" id="name" class="contact__input" />
+                <span id="nameError" class="error-message"></span> <!-- Validation message -->
               </div>
-
+      
               <div class="contact__content">
                 <label for="email" class="content__label">Your Email</label>
                 <input type="email" id="email" class="contact__input" />
+                <span id="emailError" class="error-message"></span> <!-- Validation message -->
               </div>
             </div>
-
+      
             <div class="contact__content">
               <label for="message" class="content__label">Your Message</label>
-              <textarea
-                id="message"
-                cols="0"
-                rows="8"
-                class="contact__input"
-              ></textarea>
+              <textarea id="message" cols="0" rows="8" class="contact__input"></textarea>
+              <span id="messageError" class="error-message"></span> <!-- Validation message -->
             </div>
-
+      
             <div>
-              <a
-                href="#"
-                class="button button--flex"
-                id="sendEmail"
-              >
+              <a href="#" class="button button--flex" id="sendEmail">
                 Send Message
                 <i class="uil uil-message button__icon"></i>
               </a>
@@ -765,6 +727,7 @@
           </form>
         </div>
       </section>
+      
 
 
     </main>
