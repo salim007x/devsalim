@@ -1178,3 +1178,11 @@ img {
   font-size: 12px; /* Smaller font size */
   margin-top: 5px; /* Space between the input and error message */
 }
+
+
+/* MEDIA QUERY MOBILE*/
+@media (max-width: 576px) {
+  .portfolio__img {
+    height: 10rem !important;
+  }
+}
